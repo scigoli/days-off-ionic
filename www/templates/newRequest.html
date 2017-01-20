@@ -1,0 +1,30 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Add New Request</h1>
+    <div class="buttons">
+      <button class="button button-light" ng-click="closeRequest()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form id="reserveForm" name="reserveForm" ng-submit="doRequest()">
+      <div class="list">
+
+        <label class="item item-input">
+          <span class="input-label">From</span>
+          <input type="date" ng-model="requestData.From">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">To</span>
+          <input type="date" ng-model="requestData.To">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Description</span>
+          <input type="text" ng-model="requestData.Description">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Add</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

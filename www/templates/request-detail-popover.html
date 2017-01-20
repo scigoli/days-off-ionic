@@ -1,0 +1,10 @@
+<ion-popover-view>
+    <ion-content>
+       <div class="list">
+         <a class="item" ng-click="approveDenyRequest(selected,1)" ng-show="isSupervisor()">Approve</a>
+         <a class="item" ng-click="approveDenyRequest(selected,2)" ng-show="isSupervisor()">Deny</a>
+         <a class="item" ng-click="approveDenyRequest(selected,0)" ng-show="isSupervisor()">Reset</a>
+         <a class="item" ng-click="removeRequest(selected)">Delete</a>
+       </div>
+    </ion-content>
+ </ion-popover-view>

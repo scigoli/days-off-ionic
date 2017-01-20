@@ -1,0 +1,25 @@
+<ion-view view-title="Requests">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="request in requests | filter:{RequestedBy:filtText}  | orderBy:'-SubmittedOn'""  href="#/app/requests/{{request.id}}">
+        <!-- <div ng-show = "ShowItem(Status)"> -->
+          <h3>Requested by: {{getEmployeeName(request.RequestedBy)}} <span class="badge badge-stable">{{getStatusMessage(request.Status)}}</span></h3>
+          <p>From {{request.From | date: 'MMM. d, y'}}</p>
+          <p>To {{request.To | date: 'MMM. d, y'}}</p>
+          <p>Description {{request.Description}}</p>
+
+          <ion-option-button class="button-assertive icon ion-more"
+                    ng-click="openPopover($event,request.id)">
+          </ion-option-button>
+
+        </ion-item>
+      </ion-list>
+    <!-- </div>   -->
+  </ion-content>
+
+
+<div class="bar bar-footer bar-dark">
+  <!-- <button class="button button-dark pull-left" ng-click="ToggleProcessed()">Hide/Show</button> -->
+  <button class="button button-dark pull-right" ng-click="showRequestForm()">New Request</button>
+</div>
+</ion-view>

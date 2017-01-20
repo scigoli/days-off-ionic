@@ -1,0 +1,26 @@
+<ion-view view-title="Employees">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="employee in employees" href="#/app/employees/{{employee.id}}">
+
+      <ion-card>
+        <div class="item item-thumbnail-left item-text-wrap">
+          <img ng-src={{getImage(employee.IsManager)}} alt="User">
+            <ion-card-content>
+              <ion-card-title>
+                <h2>{{employee.username}}</h2>
+              </ion-card-title>
+
+              <p>
+                Email: {{employee.email}}
+                Department: {{employee.DepartmentId}}
+              </p>
+            </ion-card-content>
+
+          </ion-card>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
